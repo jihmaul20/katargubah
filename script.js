@@ -1,16 +1,3 @@
-window.addEventListener('scroll', function() {
-    const header = document.getElementById('main-header');
-    const mainContent = document.querySelector('main');
-    
-    if (window.scrollY > 80) {
-        header.classList.add('shrink');
-        mainContent.classList.add('shifted');
-    } else {
-        header.classList.remove('shrink');
-        mainContent.classList.remove('shifted');
-    }
-});
-
 document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
     const emailContainer = document.getElementById('email-container');
