@@ -40,27 +40,6 @@ header {
     transform: translateY(-100%);
 }
 
-header.shrink {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 127px;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 1.5rem 1rem;
-    z-index: 1000;
-}
-
-header.shrink nav ul {
-    display: block;
-    margin-bottom: 320px;
-}
-
-header.shrink nav ul li {
-    margin-bottom: 1.5rem;
-}
-
 header .logo {
     height: 70px;
     width: auto;
