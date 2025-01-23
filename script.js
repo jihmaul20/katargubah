@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+  
+    menuToggle.addEventListener('click', function (e) {
+      e.stopPropagation(); // Prevent the click from propagating to document
+      menu.classList.toggle('show');
+    });
+  
+    document.addEventListener('click', function () {
+      menu.classList.remove('show'); // Close menu if clicked outside
+    });
+  
+    menu.addEventListener('click', function (e) {
+      e.stopPropagation(); // Prevent closing menu when clicking inside
+    });
+});  
+
+document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
     const emailContainer = document.getElementById('email-container');
     const kontakContainer = document.getElementById('nomor-container');
@@ -16,48 +34,51 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function () {
-    const evidenceInput = document.getElementById('evidence');
+document.addEventListener("DOMContentLoaded", function () {
+    const fileContainer = document.getElementById("file-upload-container");
+    const fileList = document.getElementById("file-list");
+    const defaultFileInput = document.getElementById("evidence");
 
-    evidenceInput.addEventListener('change', function () {
-        const files = evidenceInput.files;
-        const previewContainer = document.createElement('div');
-        previewContainer.setAttribute('id', 'file-previews');
-        document.getElementById('report-form').appendChild(previewContainer);
+    // Fungsi untuk menambahkan file ke daftar dan menampilkan tombol hapus
+    const handleFileSelect = (fileInput) => {
+        Array.from(fileInput.files).forEach((file) => {
+            const listItem = document.createElement("li");
+            listItem.innerHTML = `<span>${file.name}</span>`;
 
-        // Clear existing previews
-        previewContainer.innerHTML = '';
-
-        for (let i = 0; i < files.length; i++) {
-            const file = files[i];
-            const fileReader = new FileReader();
-
-            fileReader.addEventListener('load', function (event) {
-                const fileUrl = event.target.result;
-                const filePreview = document.createElement('div');
-                filePreview.classList.add('file-preview');
-
-                // Preview for images
-                if (file.type.startsWith('image/')) {
-                    const img = document.createElement('img');
-                    img.src = fileUrl;
-                    img.style.width = '100px';
-                    img.style.margin = '5px';
-                    filePreview.appendChild(img);
-                }
-
-                // Preview for video and audio (only show file name)
-                if (file.type.startsWith('video/') || file.type.startsWith('audio/')) {
-                    const mediaInfo = document.createElement('p');
-                    mediaInfo.textContent = file.name;
-                    mediaInfo.style.margin = '5px';
-                    filePreview.appendChild(mediaInfo);
-                }
-
-                previewContainer.appendChild(filePreview);
+            // Tombol hapus file
+            const removeButton = document.createElement("button");
+            removeButton.textContent = "Hapus";
+            removeButton.addEventListener("click", function () {
+                fileList.removeChild(listItem); // Hapus file dari daftar
+                fileInput.value = ""; // Kosongkan input file untuk memastikan bisa dipakai ulang
+                fileInput.style.display = "none"; // Sembunyikan input file
             });
 
-            fileReader.readAsDataURL(file);
-        }
+            listItem.appendChild(removeButton);
+            fileList.appendChild(listItem);
+        });
+    };
+
+    // Tangkap perubahan pada input file default
+    defaultFileInput.addEventListener("change", function () {
+        handleFileSelect(defaultFileInput);
     });
+
+    // Fungsi untuk menambahkan input file baru
+    const addFileInput = () => {
+        const newFileInput = document.createElement("input");
+        newFileInput.type = "file";
+        newFileInput.name = "evidence[]";
+        newFileInput.accept = "image/*,video/*,audio/*";
+
+        // Tangkap perubahan pada input baru
+        newFileInput.addEventListener("change", function () {
+            handleFileSelect(newFileInput);
+        });
+
+        fileContainer.appendChild(newFileInput); // Tambahkan input baru ke container
+        newFileInput.click(); // Trigger klik untuk memilih file langsung
+    };
+
+    // Tambahkan event listener pada tombol atau elemen pemicu lain (opsional)
 });
