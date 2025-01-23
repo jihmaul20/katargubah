@@ -167,6 +167,73 @@ p {
     border-radius: 5px;
 }
 
+textarea {
+    resize: vertical; /* Izinkan pengguna untuk mengubah ukuran vertikal */
+    overflow-y: auto; /* Tampilkan scroll jika konten terlalu panjang secara vertikal */
+    width: 100%; /* Agar textarea menyesuaikan lebar form */
+    max-height: 300px; /* Batasi tinggi maksimal area teks */
+    min-height: 100px; /* Tetapkan tinggi minimal */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box; /* Agar padding dihitung dalam ukuran elemen */
+}
+
+.custom-file-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    text-align: center;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+#file-upload-container input[type="file"] {
+    display: none; /* Sembunyikan input file asli */
+}
+
+#file-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#file-list li span {
+    word-break: break-all;
+}
+
+#file-list li button {
+    margin-left: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#file-list li button:hover {
+    background-color: #cc0000;
+}
 
 .box-container {
     display: flex;
