@@ -1,20 +1,22 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
-    const menu = document.querySelector('.menu');
-  
-    menuToggle.addEventListener('click', function (e) {
-      e.stopPropagation(); // Prevent the click from propagating to document
-      menu.classList.toggle('show');
+    const mainMenu = document.querySelector('.main-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mainMenu.classList.toggle('active');
     });
-  
-    document.addEventListener('click', function () {
-      menu.classList.remove('show'); // Close menu if clicked outside
+
+    const menuItems = document.querySelectorAll('.main-menu > li');
+    menuItems.forEach(item => {
+        item.addEventListener('click', (e) => {
+            const submenu = item.querySelector('.sub-menu');
+            if (submenu) {
+                e.preventDefault();
+                submenu.classList.toggle('active');
+            }
+        });
     });
-  
-    menu.addEventListener('click', function (e) {
-      e.stopPropagation(); // Prevent closing menu when clicking inside
-    });
-});  
+});
 
 document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
