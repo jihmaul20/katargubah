@@ -344,66 +344,75 @@ textarea {
     background-color: #cc0000;
 }
 
+/* Box-container untuk tata letak */
+/* Tata letak Box Container untuk memastikan responsivitas */
 .box-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 1rem;
-    border: 3px solid rgb(236, 236, 29);
-    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('img/logo-katar.png') no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Agar elemen bisa responsif */
+    gap: 20px; /* Spasi antar elemen */
 }
 
-.box-container .box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* Gaya kartu dengan sudut membulat dan bayangan halus */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    width: 280px; /* Ukuran kartu tetap */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efek saat hover pada kartu */
+.card:hover {
+    transform: translateY(-10px); /* Efek melayang saat hover */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Bayangan lebih dalam */
+}
+
+/* Gaya gambar pada kartu */
+.card-image img {
     width: 100%;
-    max-width: 500px; /* Sesuaikan ukuran maksimal box */
-    margin: 1rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 2rem;
-    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
+    height: 180px;
+    object-fit: cover; /* Memastikan gambar menyesuaikan ukuran */
+    transition: opacity 0.3s ease;
+}
+
+/* Gaya konten teks dalam kartu */
+.card-content {
+    padding: 20px;
     text-align: center;
+    background-color: #f8f8f8;
+    border-top: 1px solid #eee; /* Pembatas antara gambar dan teks */
 }
 
-.box-container .box .medsos {
-    width: 100%;
-    padding: 1.5rem;
-    margin: 2rem 0;
-    border-radius: 2rem;
-    box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.1);
-    text-align: center;
-    border: 5px dashed red;
+/* Gaya judul dalam kartu */
+.card-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
 }
 
-.box-container .box .medsos img {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    object-fit: cover;
+/* Gaya deskripsi dalam kartu */
+.card-content p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
 }
 
-.box-container .box .medsos h3 {
-    margin: 1rem 0;
+/* Transisi gambar saat hover */
+.card:hover .card-image img {
+    opacity: 0.85; /* Mengurangi opacity sedikit saat hover */
 }
 
-.box-container .box .medsos h3 a {
-    display: inline-block; /* Inline-block agar dapat diberi padding */
-    padding: 10px;
+/* Mengatur gaya link agar tidak ada garis bawah */
+.card-link {
     text-decoration: none;
-    color: inherit;
-    width: 100%; /* Pastikan link tidak melebihi lebar container */
-    box-sizing: border-box;
+    color: inherit; /* Menjaga warna teks sesuai dengan desain */
 }
-
-.box-container .box .medsos h3 a:hover {
-    color: #ffcc00;
-}
-
 
 footer {
     position: relative;
