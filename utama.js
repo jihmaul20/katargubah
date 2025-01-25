@@ -18,6 +18,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+// Menambahkan efek smooth scrolling untuk anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
     const emailContainer = document.getElementById('email-container');
