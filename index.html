@@ -2,23 +2,251 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halaman Utama</title>
-    <link rel="stylesheet" href="index.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>KATAR GUBAH</title>
+    <link rel="stylesheet" href="utama.css">
 </head>
-
 <body>
-    <canvas id="particleCanvas"></canvas>
-    <section class="home" id="home">
-        <a href="utama.html"><input type="image" class="btn-logo" src="logo-katar.png"></a>
-    </section>
-</body>
+    <!--MENU-->
+    <header id="main-header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <a href="index.html">
+                    <img src="logo-katar.png" alt="Logo Katar" class="logo">
+                </a>
+            </div>
+            <button class="menu-toggle">Menu</button>
+            <ul class="main-menu">
+                <li><a href="#beranda" class="a1">Beranda</a></li>
+                <li>
+                    <a href="#kami" class="a1">Tentang Kami</a>
+                    <ul class="sub-menu">
+                        <li><a href="#struktur">Struktur Organisasi</a></li>
+                        <li><a href="#kerja">Kerja</a></li>
+                        <li><a href="#dokumentasi">Dokumentasi</a></li>
+                    </ul>
+                </li>
+                <li><a href="#lapor" class="a2">Lapor!</a></li>
+                <li><a href="#sosmed" class="a1">Sosmed</a></li>
+            </ul>
+        </nav>
+    </header>    
 
-<footer>
-    <div class="footer">
-        <h4><span class="title1"> KARANG TARUNA </span><span class="title2"> BINA GENERASI MUDA </span></h4>
-        <h3 class="title3"> Kelurahan GUNUNG BAHAGIA </h3>
-    </div>
-</footer>
+    <main> 
+        <!--BERANDA-->
+        <section id="beranda" class="section">
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Karang Taruna Gubah</h1>
+                    <p style="font-size: 20px;">
+                        <i>
+                            “Karang Taruna Gunung Bahagia... Wadah Generasi Muda Untuk Mengembangkan
+                            Diri, Tumbuh Berkembang Atas Dasar Kesadaran Dan Tanggung Jawab Sosial Dari
+                            Oleh Dan Untuk Generasi Muda Yang Berorientasi Pada Kesejahteraan Sosial Bagi Masyarakat"
+                        </i>
+                    </p>
+                    <a href="#kami" class="btn-cta">Pelajari Lebih Lanjut</a>
+                </div>
+            </section>
+            <h3 style="justify-content: center; text-align: center; font-size: 35px; margin-top: 35px;">VISI & MISI</h3>
+            <section class="features">
+                <div class="feature-container">
+                    <div class="feature-card">
+                        <img src="logo-katar.png" alt="Kegiatan Sosial">
+                        <h3>Kegiatan Sosial</h3>
+                        <p>Bersama membantu masyarakat melalui berbagai kegiatan sosial.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="logo-katar.png" alt="Pemberdayaan Pemuda">
+                        <h3>Pemberdayaan Pemuda</h3>
+                        <p>Mendukung potensi generasi muda melalui berbagai pelatihan.</p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="logo-katar.png" alt="Pendidikan & Pelatihan">
+                        <h3>Pendidikan & Pelatihan</h3>
+                        <p>Menyediakan program pendidikan untuk meningkatkan kompetensi.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!--KAMI-->
+        <section id="kami">
+            <!-- Struktur Organisasi -->
+            <section id="struktur" class="section">
+                <div class="section-header">
+                    <h2>Struktur Organisasi</h2>
+                </div>
+                <div class="team-container">
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Pembina</h3>
+                            <p>Nama Pembina</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Penasihat</h3>
+                            <p>Nama Penasihat</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Ketua</h3>
+                            <p>Nama Ketua</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Wakil Ketua</h3>
+                            <p>Nama Wakil Ketua</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Sekretaris</h3>
+                            <p>Nama Sekretaris</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Bendahara</h3>
+                            <p>Nama Bendahara</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3>Seksi-Seksi</h3>
+                            <p>Nama Seksi-Seksi</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+        
+        <!-- Proses Kerja -->
+        <section id="kerja" class="section">
+            <div class="workflow">
+                <h2 style="padding-bottom: 20px;">Proses Kerja</h2>
+                <div class="steps">
+                    <div class="step">
+                        <h3>1. Rapat Internal</h3>
+                        <p>Diskusi untuk menyusun rencana kerja.</p>
+                    </div>
+                    <div class="step">
+                        <h3>2. Pelaksanaan Kegiatan</h3>
+                        <p>Implementasi program kerja yang telah direncanakan.</p>
+                    </div>
+                    <div class="step">
+                        <h3>3. Evaluasi</h3>
+                        <p>Mereview hasil kegiatan untuk peningkatan ke depan.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Dokumentasi -->
+        <section id="dokumentasi" class="section">
+            <div class="documentation">
+                <h2>Dokumentasi Kegiatan</h2>
+                <div class="gallery">
+                    <img src="logo-katar.png" alt="Kegiatan 1">
+                    <img src="logo-katar.png" alt="Kegiatan 2">
+                    <img src="logo-katar.png" alt="Kegiatan 3">
+                </div>
+                <a href="dokumentasi.html" class="btn">Lihat Selengkapnya</a>
+            </div>
+        </section>     
+
+        <!--LAPOR-->
+        <section id="lapor" class="section">
+            <h2>Lapor!</h2>
+            <p style="color: red;"><i>Dilarang memberikan data palsu.</i></p>
+            <p style="color: red;"><i>Apabila melanggar, Anda akan segera kami proseskan hukum.</i></p>
+            <form id="report-form" action="send-report.php" method="POST" enctype="multipart/form-data">
+                <label for="name">Nama Pelapor (Sesuai KTP):</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="user">Jenis Pelapor:</label>
+                <select id="user" name="user" required>
+                    <option value="korban">Korban</option>
+                    <option value="saksi">Saksi (Pihak Luar)</option>
+                    <option value="keluarga">Keluarga</option>
+                    <option value="teman">Teman</option>
+                    <option value="pelaku">Pelaku</option>
+                </select>
+
+                <label for="contact-type">Kontak Pelapor:</label>
+                <select id="contact-type" name="contact-type" required>
+                    <option value="email">Email</option>
+                    <option value="nomor">Nomor HP (Aktif)</option>
+                </select>
+
+                <div id="email-container">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div id="nomor-container" style="display: none;">
+                    <label for="nomor">Nomor HP (Aktif):</label>
+                    <input type="number" id="nomor" name="nomor">
+                </div>
+
+                <label for="lokasi">Tempat Tinggal Pelapor (Lengkap):</label>
+                <i>(jalan, rt, no. bangunan, kelurahan, kecamatan)</i>
+                <input type="text" id="lokasi" name="lokasi" required>
+
+                <label for="laporan">Jenis Laporan:</label>
+                <select id="laporan" name="laporan" required>
+                    <option value="bencana">Bencana</option>
+                    <option value="kekerasan">Kekerasan Anak & Perempuan / KDRT</option>
+                    <option value="orang-hilang">Orang Hilang</option>
+                    <option value="pencurian">Pencurian</option>
+                    <option value="penculikan">Penculikan</option>
+                    <option value="barang">Penemuan Barang Hilang / Mencurigakan</option>
+                    <option value="laporan-lain">Lainnya</option>
+                </select>
+
+                <label for="message">Deskripsi Laporan Lengkap (Detai;):</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <label for="evidence" class="custom-file-label">Upload Bukti (Opsional)</label>
+                <div id="file-upload-container">
+                <i style="text-align: center;">(Foto, Video, atau Audio)</i>
+                    <input type="file" id="evidence" name="evidence[]" accept="image/*,video/*,audio/*" multiple>
+                </div>
+                <ul id="file-list"></ul>
+
+                <button type="submit" class="btn-lapor">Cepat Laporkan</button>
+            </form>
+            <p style="color: blue; font-style: italic;">lapor! dalam proses uji coba</p>
+        </section>
+
+        <!--SOSMED-->
+        <section id="sosmed" class="section">
+            <h2>Sosial Media Katar Gubah</h2>
+            <div class="box-container">
+                <div class="card">
+                    <a href="https://www.instagram.com/katargunungbahagia/" target="_blank" class="card-link">
+                        <div class="card-image">
+                            <img src="ig-katar.jpg" alt="Instagram Katar Gubah" />
+                        </div>
+                        <div class="card-content">
+                            <h3>Instagram</h3>
+                            <p>Ikuti Instagram kami</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>                      
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Karang Taruna Bina Generasi Muda kelurahan Gunung Bahagia. All rights reserved.</p>
+    </footer>
+
+    <script src="utama.js"></script>
+</body>
 </html>
