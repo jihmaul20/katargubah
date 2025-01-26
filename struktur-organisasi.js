@@ -4,22 +4,18 @@ const moreButtons = document.querySelectorAll('.more-btn');
 // Tambahkan event listener untuk setiap tombol
 moreButtons.forEach(button => {
     button.addEventListener('click', () => {
-        toggleSocialMedia(button);
+        // Tutup semua social media yang lain
+        document.querySelectorAll('.social-media').forEach(media => {
+            if (media !== button.nextElementSibling) {
+                media.classList.remove('show');
+            }
+        });
+
+        // Toggle social media untuk tombol yang diklik
+        const socialMedia = button.nextElementSibling;
+        socialMedia.classList.toggle('show');
     });
 });
-
-// Fungsi untuk toggle elemen media sosial
-function toggleSocialMedia(button) {
-    const socialMedia = button.nextElementSibling; // Ambil elemen setelah tombol
-    if (socialMedia) { // Pastikan elemen berikutnya ada
-        socialMedia.classList.toggle('show'); // Tambah/hapus class 'show'
-
-        // Ubah teks tombol berdasarkan kondisi
-        button.textContent = socialMedia.classList.contains('show') ? 'Tutup' : 'Selengkapnya';
-    } else {
-        console.error('Elemen media sosial tidak ditemukan untuk tombol ini:', button);
-    }
-}
 
 // Ambil semua header section
 const sectionHeaders = document.querySelectorAll('.section-header');
@@ -65,4 +61,30 @@ seksiHeaders.forEach(header => {
             }
         });
     });
+});
+
+// Ambil elemen modal dan kontennya
+const photoModal = document.getElementById('photoModal');
+const modalImage = document.getElementById('modalImage');
+const closeModal = document.querySelector('.close-modal');
+
+// Tambahkan event listener untuk semua gambar anggota
+document.querySelectorAll('.person img').forEach(img => {
+    img.addEventListener('click', () => {
+        // Tampilkan modal dan ganti gambar di modal
+        photoModal.style.display = 'block';
+        modalImage.src = img.src; // Ambil sumber gambar yang diklik
+    });
+});
+
+// Tutup modal saat tombol "X" diklik
+closeModal.addEventListener('click', () => {
+    photoModal.style.display = 'none';
+});
+
+// Tutup modal saat area luar gambar diklik
+photoModal.addEventListener('click', (e) => {
+    if (e.target === photoModal) {
+        photoModal.style.display = 'none';
+    }
 });
