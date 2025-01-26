@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+/* NAVIGASI */
 .navbar {
     position: fixed;
     top: 0;
@@ -28,6 +29,7 @@
     align-items: center;
 }
 
+/* MENU */
 .menu-toggle {
     display: none;
     background: black;
@@ -136,6 +138,7 @@
     color: black;
 }
 
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     background: #f4f4f4;
@@ -145,6 +148,7 @@ body {
     color: #333;
 }
 
+/* MAIN */
 main {
     margin-top: 70px;
     transition: margin-left 0.3s ease;
@@ -158,10 +162,13 @@ main {
     padding-right: 20px;
 }
 
+/* Beranda */
 section#beranda {
     background: #f4f4f4;
 }
 
+/* Beranda */
+/* awal */
 .hero {
     height: 100vh;
     background: linear-gradient(45deg, rgba(255, 255, 0, 0.8), rgba(255, 0, 0, 0.8));
@@ -173,12 +180,12 @@ section#beranda {
 }
 
 .hero-content h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-content p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -197,6 +204,8 @@ section#beranda {
     color: black;
 }
 
+/* Beranda */
+/* visi & misi */
 .features {
     display: flex;
     justify-content: center;
@@ -227,12 +236,15 @@ section#beranda {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Kami */
 section#kami {
     padding: 40px 20px;
     background: #f4f4f4;
     text-align: center;
 }
 
+/* Kami */
+/* struktur organisasi */
 .section-header h2 {
     font-size: 2rem;
     color: #333;
@@ -273,6 +285,8 @@ section#kami {
     color: #666;
 }
 
+/* Kami */
+/* proses kerja */
 .workflow .steps {
     display: flex;
     gap: 20px;
@@ -294,6 +308,8 @@ section#kami {
     color: #ff6f00;
 }
 
+/* Kami */
+/* dokumentasi */
 .gallery img:hover {
     transform: scale(1.1);
 }
@@ -314,6 +330,7 @@ section#kami {
     background: #e65c00;
 }
 
+/* Lapor! */
 section#lapor {
     background: #ebe9e9;
 }
@@ -482,6 +499,7 @@ textarea {
     background-color: #cc0000;
 }
 
+/* Sosmed! */
 .box-container {
     display: flex;
     justify-content: center;
@@ -542,6 +560,7 @@ textarea {
     color: inherit; 
 }
 
+/* FOOTER */
 footer {
     position: relative;
     bottom: 0;
