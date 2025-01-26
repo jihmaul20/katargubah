@@ -1,0 +1,203 @@
+/* Responsiveness */
+@media (max-width: 768px) {
+    .card {
+        max-width: 300px;
+    }
+
+    .section-header h3 {
+        font-size: 2rem;
+    }
+    
+    .person {
+        flex-direction: column; /* Susunan vertikal untuk tampilan kecil */
+        align-items: flex-start; /* Mulai dari kiri */
+        gap: 10px; /* Kurangi jarak antar elemen */
+    }
+
+    .person img {
+        margin-bottom: 10px; /* Beri jarak dengan info */
+    }
+
+    .person-info h3 {
+        font-size: 1.2rem; /* Kurangi ukuran font */
+    }
+
+    .section-header h3 {
+        font-size: 2rem; /* Ukuran lebih kecil */
+    }
+}
+
+/* Reset dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+  
+/* Header */
+header {
+    text-align: center;
+    background-color: #002e5d; /* Biru tua */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+h1, h2 {
+    margin: 0;
+}
+  
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+  
+section {
+    margin-bottom: 20px;
+}
+
+/* Section Header */
+.section-header {
+    background-color: #002e5d; /* Biru tua */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.section-header:hover {
+    background-color: white; 
+}
+  
+/* Section Header */
+.section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #ffa500; /* Kuning */
+    display: inline-block;
+    color: white; s
+}
+
+/* Style header seksi */
+.seksi-header {
+    background-color: #002e5d; /* Biru tua */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.seksi-header:hover {
+    background-color: #003d75; /* Biru terang */
+}
+
+/* Konten anggota (sembunyi default) */
+.team-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Konten anggota saat aktif */
+.team-content.active {
+    max-height: 500px; /* Pastikan cukup besar untuk menampung konten */
+    opacity: 1;
+}
+
+/* Tampilan Anggota */
+.person {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    margin: 10px 0;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.person img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #ffa500; /* Kuning */
+    flex-shrink: 0;
+}
+  
+.person-info {
+    flex-grow: 1;
+}
+  
+.person-info h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #d62828; /* Merah */
+}
+
+.person-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+  
+/* Button Style */
+.more-btn {
+    background-color: #d62828; /* Merah */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block; /* Pastikan tetap terlihat */
+    text-align: center;
+    white-space: nowrap; /* Mencegah teks tombol terpotong */
+}
+
+.more-btn:hover {
+    background-color: #ffa500; /* Merah gelap */
+    transform: scale(1.05); /* Efek hover */
+}
+  
+.more-btn:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px rgba(214, 40, 40, 0.5); /* Efek fokus */
+}
+  
+/* Social Media Section */
+.social-media {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    padding: 0;
+}
+  
+.social-media.show {
+    max-height: 100px;
+    padding: 10px 0;
+}
+  
+.social-media a {
+    display: inline-block;
+    margin-right: 8px;
+    text-decoration: none;
+    color: #002e5d; /* Biru tua */
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+  
+.social-media a:hover {
+    color: #ffa500; /* Kuning */
+}
