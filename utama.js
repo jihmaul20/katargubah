@@ -29,6 +29,39 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    const cards = document.querySelectorAll(".card");
+    const prevButton = document.querySelector("#prev");
+    const nextButton = document.querySelector("#next");
+    let currentIndex = 0;
+
+    function updateCards() {
+      cards.forEach((card, index) => {
+        if (index === currentIndex) {
+          card.style.transform = "scale(1.1)";
+          card.style.zIndex = "1";
+          card.style.opacity = "1";
+        } else {
+          card.style.transform = "scale(1)";
+          card.style.zIndex = "0";
+          card.style.opacity = "0.7";
+        }
+      });
+    }
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+      updateCards();
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % cards.length;
+      updateCards();
+    });
+
+    updateCards(); // Initialize the first state
+  });
+
 document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
     const emailContainer = document.getElementById('email-container');
