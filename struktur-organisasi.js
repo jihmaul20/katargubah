@@ -1,3 +1,34 @@
+// Ambil elemen background
+const background = document.getElementById('background-animation');
+
+// Fungsi untuk membuat partikel
+function createParticle() {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+
+    // Posisi awal partikel (acak)
+    particle.style.left = Math.random() * window.innerWidth + 'px';
+    particle.style.top = Math.random() * -50 + 'px'; // Mulai dari luar layar atas
+
+    // Ukuran acak
+    const size = Math.random() * 10 + 5;
+    particle.style.width = size + 'px';
+    particle.style.height = size + 'px';
+
+    // Tambahkan partikel ke background
+    background.appendChild(particle);
+
+    // Hapus partikel setelah selesai animasi
+    setTimeout(() => {
+        particle.remove();
+    }, 10000);
+}
+
+// Buat partikel secara berkala
+setInterval(createParticle, 300); // Setiap 300ms
+
+
+
 // Ambil semua tombol dengan class 'more-btn'
 const moreButtons = document.querySelectorAll('.more-btn');
 
