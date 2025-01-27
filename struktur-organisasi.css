@@ -1,8 +1,8 @@
 /* Responsiveness */
 @media (max-width: 768px) {
     .person {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction:column;
+        align-items:normal;
     }
 
     .person img {
@@ -43,6 +43,30 @@ body {
     background-color: #f7f7f7;
     color: #333;
     line-height: 1.6;
+}
+
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, yellow, #141414, red);
+    background-size: 400% 400%; /* Perbesar gradasi */
+    animation: gradientMove 10s ease infinite; /* Animasi bergerak */
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
   
 /* Header */
@@ -95,7 +119,7 @@ section {
 
 /* Style header seksi */
 .seksi-header {
-    background-color: #002e5d; /* Biru tua */
+    background-color: #1c5b9a; /* Biru tua */
     color: white;
     padding: 15px;
     cursor: pointer;
@@ -106,7 +130,7 @@ section {
 }
 
 .seksi-header:hover {
-    background-color: #003d75; /* Biru terang */
+    background-color: #002e5d; 
 }
 
 .photo-modal {
