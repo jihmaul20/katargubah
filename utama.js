@@ -1,3 +1,4 @@
+/* MENU */
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.querySelector('.menu-toggle');
     const mainMenu = document.querySelector('.main-menu');
@@ -18,17 +19,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Menambahkan efek smooth scrolling untuk anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+/* DOKUMENTASI */
+document.addEventListener("DOMContentLoaded", () => {
+    const filterButtons = document.querySelectorAll(".filter-button");
+    const galleryItems = document.querySelectorAll(".gallery-item");
+  
+    filterButtons.forEach(button => {
+      button.addEventListener("click", () => {
+        const category = button.getAttribute("data-filter");
+  
+        // Hapus kelas aktif dari semua tombol
+        filterButtons.forEach(btn => btn.classList.remove("active"));
+  
+        // Tambahkan kelas aktif ke tombol yang diklik
+        button.classList.add("active");
+  
+        // Tampilkan/sembunyikan item berdasarkan kategori
+        galleryItems.forEach(item => {
+          if (category === "all" || item.getAttribute("data-category") === category) {
+            item.style.display = "block";
+          } else {
+            item.style.display = "none";
+          }
         });
+      });
     });
-});
+  });  
 
+/* LAPOR! */
 document.addEventListener('DOMContentLoaded', function () {
     const contactTypeSelect = document.getElementById('contact-type');
     const emailContainer = document.getElementById('email-container');
@@ -44,6 +62,17 @@ document.addEventListener('DOMContentLoaded', function () {
             emailContainer.style.display = 'none';
             kontakContainer.style.display = 'block';
         }
+    });
+});
+
+// Menambahkan efek smooth scrolling untuk anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
     });
 });
 
