@@ -146,18 +146,33 @@
             </div>
         </section>
 
-         <!-- Dokumentasi -->
+        <!-- Dokumentasi -->
         <section id="dokumentasi" class="section">
-            <div class="documentation">
+            <div class="dokumentasi">
                 <h2>Dokumentasi Kegiatan</h2>
+                <div class="filter-container">
+                    <button class="filter-button" data-filter="all">Semua</button>
+                    <button class="filter-button" data-filter="kegiatan">Kegiatan</button>
+                    <button class="filter-button" data-filter="pelatihan">Pelatihan</button>
+                    <button class="filter-button" data-filter="sosial">Sosial</button>
+                </div>         
                 <div class="gallery">
-                    <img src="logo-katar.png" alt="Kegiatan 1">
-                    <img src="logo-katar.png" alt="Kegiatan 2">
-                    <img src="logo-katar.png" alt="Kegiatan 3">
+                    <div class="gallery-item" data-category="sosial">
+                        <img src="logo-katar.png" alt="Kegiatan Sosial 1">
+                        <p class="caption">Kegiatan Sosial</p>
+                    </div>
+                    <div class="gallery-item" data-category="pelatihan">
+                        <img src="logo-katar.png" alt="Pelatihan Pemuda 1">
+                        <p class="caption">Pelatihan Pemuda</p>
+                    </div>
+                    <div class="gallery-item" data-category="pendidikan">
+                        <img src="logo-katar.png" alt="Pendidikan & Pelatihan 1">
+                        <p class="caption">Pendidikan & Pelatihan</p>
+                    </div>             
                 </div>
-                <a href="dokumentasi.html" class="btn">Lihat Selengkapnya</a>
+                <a href="dokumentasi.html" class="btn">Lihat Selengkapnya >>></a>
             </div>
-        </section>     
+        </section>          
 
         <!--LAPOR-->
         <section id="lapor" class="section">
