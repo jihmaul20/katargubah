@@ -1,0 +1,315 @@
+/* Media Queries untuk layar besar (Laptop/Monitor) */
+@media (min-width: 1024px) { /* Untuk layar laptop */
+    .gallery-item img {
+        max-width: 60%; /* Sesuaikan dengan kebutuhan */
+        height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-item {
+        width: 100%; /* Gambar mengambil lebar penuh di layar kecil */
+        max-width: 300px; /* Batasi lebar maksimum */
+    }
+
+    .modal-content {
+        max-width: 95%; /* Modal lebih lebar di layar kecil */
+        max-height: 95vh; /* Modal lebih tinggi di layar kecil */
+    }
+}
+
+@media (max-width: 768px) {
+    .filter-container {
+        display: flex;
+        flex-wrap: wrap; /* Tombol akan turun ke baris berikutnya jika tidak cukup */
+        justify-content: center;
+        gap: 5px; /* Beri sedikit jarak antar tombol */
+        padding: 10px;
+    }
+
+    .filter-button {
+        font-size: 12px; /* Perkecil ukuran font agar muat */
+        padding: 8px 10px; /* Sesuaikan padding agar tidak terlalu besar */
+        max-width: 120px; /* Batasi lebar tombol agar tidak terlalu panjang */
+        text-align: center;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+  
+header {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+  
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+.navbar .main-menu {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+  
+.navbar .main-menu a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+  
+.section {
+    padding: 40px 20px;
+}
+  
+h1 {
+    text-align: center;
+    color: #333;
+}
+  
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+}
+  
+.filter-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+  
+.filter-button {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Tombol tetap berada di tengah */
+    gap: 10px; /* Beri jarak antar tombol */
+    padding: 10px;
+}
+
+.filter-button button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.filter-buttons button:hover {
+    background-color: #0056b3;
+}
+  
+.filter-button.active {
+    background-color: rgb(236, 236, 29);
+    color: black;
+}
+  
+.filter-button:hover {
+    background-color: rgb(236, 236, 29);
+}
+  
+/* Tampilan default untuk semua perangkat */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Konten galeri rata tengah */
+    gap: 10px; /* Jarak antar item */
+    padding: 20px 0; /* Padding atas dan bawah */
+}
+  
+.gallery-item {
+    width: 200px; /* Lebar tetap untuk setiap item */
+    height: auto; /* Tinggi disesuaikan secara proporsional */
+    cursor: pointer;
+    transition: transform 0.2s;
+    display: flex;
+    justify-content: center; /* Konten di dalam item rata tengah */
+    align-items: center; /* Konten di dalam item rata tengah */
+}
+
+.gallery-item:hover {
+    transform: scale(1.05);
+}
+
+.gallery-item img {
+    width: 100%; /* Gambar akan menyesuaikan lebar parent-nya */
+    height: auto; /* Tinggi disesuaikan secara proporsional */
+    max-width: 100%; /* Pastikan gambar tidak melebihi lebar parent */
+    display: block; /* Hilangkan margin bawah default */
+}
+
+.gallery-item img, .gallery-item video {
+    max-width: 100%; /* Gambar dan video tidak melebihi lebar parent */
+    height: auto; /* Tinggi disesuaikan secara proporsional */
+    display: block; /* Hilangkan margin bawah default */
+}
+
+video {
+    width: 100%; /* Video menyesuaikan lebar modal */
+    height: auto; /* Tinggi disesuaikan secara proporsional */
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Warna latar belakang modal */
+}
+
+.modal-content {
+    max-width: 90%; /* Modal tidak melebihi 90% lebar layar */
+    max-height: 90vh; /* Modal tidak melebihi 90% tinggi layar */
+    width: auto; /* Lebar disesuaikan secara otomatis */
+    height: auto; /* Tinggi disesuaikan secara otomatis */
+    margin: auto; /* Pusatkan modal */
+    display: block;
+}
+  
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #003366; 
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+  
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f0c040;
+    display: inline-block;
+}
+  
+.footer-section p,.footer-section ul {
+    line-height: 1.6;
+}
+  
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+  
+.footer-section ul li a {
+    text-decoration: none;
+    color: #f0c040; 
+    transition: color 0.3s;
+}
+  
+.footer-section ul li a:hover {
+    color: #fff;
+}
+  
+.footer-section a {
+    text-decoration: none;
+    color: #f0c040;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+  
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 3px solid #fff;
+    font-size: 12px;
+}
+
+.logo-footer {
+    height: 40px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+    0%, 100% {
+        transform: translateX(5rem);
+    }
+    50% {
+        transform: translateX(-5rem);
+    }
+    100%, 0% {
+        transform: translateX(5rem);
+    }
+}
+  

@@ -1,0 +1,389 @@
+/* Responsiveness */
+@media (max-width: 768px) {
+    .person {
+        flex-direction:column;
+        align-items:normal;
+    }
+
+    .person img {
+        width: 100px; /* Tetap */
+        height: auto; /* Sesuaikan dengan aspek rasio */
+        max-height: 100px; /* Batasi tinggi maksimum */
+        border-radius: 50%; /* Membuat lingkaran */
+        border: 2px solid #ffa500; /* Warna border */
+        object-fit: cover; /* Potong bagian luar agar sesuai */
+        cursor: pointer; /* Tunjukkan bahwa gambar bisa diklik */
+        transition: transform 0.3s ease; /* Tambahkan animasi hover */
+    }
+
+    .person img:hover {
+        transform: scale(1.1); /* Efek zoom saat hover */
+    }
+
+    .person-info {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    .more-btn {
+        align-self: flex-end;
+        margin-left: 0;
+    }
+
+    .social-media {
+        right: 10px; /* Sesuaikan untuk layar kecil */
+    }
+}
+
+/* Reset dasar */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+#background-animation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(45deg, yellow, #a7a7a7, red);
+    background-size: 400% 400%; /* Perbesar gradasi */
+    animation: gradientMove 10s ease infinite; /* Animasi bergerak */
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+  
+/* Header */
+header {
+    text-align: center;
+    background-color: #002e5d; /* Biru tua */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+h1, h2 {
+    margin: 0;
+}
+  
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+  
+section {
+    margin-bottom: 20px;
+}
+
+/* Section Header */
+.section-header {
+    background-color: #002e5d; /* Biru tua */
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    margin: 0;
+    border-radius: 8px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.section-header:hover {
+    background-color: black; 
+}
+  
+/* Section Header */
+.section-header h2 {
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #ffa500; /* Kuning */
+    display: inline-block;
+    color: white; s
+}
+
+/* Style header seksi */
+.seksi-header {
+    background-color: #1c5b9a; 
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+.seksi-header:hover {
+    background-color: #002e5d; 
+}
+
+.photo-modal {
+    display: none; /* Tidak terlihat secara default */
+    position: fixed; /* Tetap di layar */
+    z-index: 9999; /* Di atas semua elemen */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Gulir jika kontennya besar */
+    background-color: rgba(0, 0, 0, 0.8); /* Latar belakang gelap transparan */
+    cursor: pointer;
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 90%; /* Maksimal 90% dari lebar layar */
+    max-height: 90%; /* Maksimal 90% dari tinggi layar */
+    border-radius: 10px; /* Sudut melengkung */
+    animation: zoomIn 0.3s ease; /* Animasi muncul */
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ffa500;
+}
+
+/* Konten anggota (sembunyi default) */
+.team-content {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+
+/* Konten anggota saat aktif */
+.team-content.active {
+    max-height: 500px; /* Pastikan cukup besar untuk menampung konten */
+    opacity: 1;
+}
+
+/* Tampilan Anggota */
+.person {
+    display: flex;
+    align-items: center; /* Agar elemen sejajar secara vertikal */
+    justify-content: space-between; /* Buat tombol di sisi kanan */
+    padding: 15px;
+    background-color: white;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.person img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ffa500; /* Kuning */
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.person-info {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+  
+.person-info h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    color: #d62828; /* Merah */
+}
+
+.person-info p {
+    margin: 10px 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+  
+/* Button Style */
+.more-btn {
+    background-color: #d62828; /* Merah */
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: auto;
+}
+
+.more-btn:hover {
+    background-color: #ffa500; 
+    transform: scale(1.05); /* Efek hover */
+}
+  
+.more-btn:focus {
+    outline: none;
+    box-shadow: 0 0 4px 2px rgba(214, 40, 40, 0.5); /* Efek fokus */
+}
+  
+/* Social Media Section */
+.social-media {
+    display: flex; /* Atur social media dalam baris */
+    gap: 10px; /* Jarak antar item */
+    transform: translateX(100%); /* Geser ke luar area tampilan */
+    opacity: 0; /* Tidak terlihat awalnya */
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Animasi muncul */
+    position: absolute;
+    top: 50%; /* Sejajarkan vertikal dengan kartu */
+    right: 15px; /* Geser ke kanan */
+    transform: translateX(100%) translateY(-50%);
+}
+  
+.social-media.show {
+    transform: translateX(0) translateY(-50%); /* Kembali ke posisi semula */
+    opacity: 1; /* Muncul */
+    background-color: rgba(245, 245, 245, 0.959);
+    background-size: 10px;
+    border-radius: 35%;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+  
+.social-media a {
+    text-decoration: none;
+    color: #002e5d; /* Biru tua */
+    font-weight: bold;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+  
+.social-media a:hover {
+    color: #ffa500; /* Kuning */
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #003366; 
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+  
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+  
+.footer-section {
+    flex: 1;
+    min-width: 250px;
+}
+  
+.footer-section h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-transform: uppercase;
+    border-bottom: 2px solid #f0c040;
+    display: inline-block;
+}
+  
+.footer-section p,.footer-section ul {
+    line-height: 1.6;
+}
+  
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+  
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+  
+.footer-section ul li a {
+    text-decoration: none;
+    color: #f0c040; 
+    transition: color 0.3s;
+}
+  
+.footer-section ul li a:hover {
+    color: #fff;
+}
+  
+.footer-section a {
+    text-decoration: none;
+    color: #f0c040;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+  
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 3px solid #fff;
+    font-size: 12px;
+}
+
+.logo-footer {
+    height: 40px;
+    width: auto;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100%;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease, background 0.3s ease;
+    animation: updown 3s linear infinite;
+}
+
+@keyframes updown {
+    0%, 100% {
+        transform: translateX(5rem);
+    }
+    50% {
+        transform: translateX(-5rem);
+    }
+    100%, 0% {
+        transform: translateX(5rem);
+    }
+}

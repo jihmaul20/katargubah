@@ -1,0 +1,7 @@
+Header set Content-Security-Policy "default-src 'self'; img-src 'self' data:; script-src 'self'; style-src 'self' 'unsafe-inline'"
+Header set X-Frame-Options "DENY"
+Header set X-XSS-Protection "1; mode=block"
+Header set X-Content-Type-Options "nosniff"
+
+//server memastikan tidak memperbolehkan akses ke direktori tanpa izin
+Options -Indexes
