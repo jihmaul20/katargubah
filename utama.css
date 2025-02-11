@@ -887,6 +887,7 @@ textarea {
     background-color: white;
     border-radius: 100%;
     margin-top: 20px;
+    margin-bottom: 40px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     animation: updown 3s linear infinite;
@@ -1001,7 +1002,7 @@ textarea {
 
 .help-modal h2 i {
     margin-right: 10px;
-    color: #ff6f00;
+    color: red;
 }
 
 .help-modal p {
