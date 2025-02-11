@@ -139,3 +139,35 @@ photoModal.addEventListener('click', (e) => {
         photoModal.style.display = 'none';
     }
 });
+
+/* Butuh Bantuan */
+document.addEventListener('DOMContentLoaded', () => {
+    const helpButton = document.getElementById('help-button');
+    const helpModal = document.getElementById('help-modal');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Tampilkan modal saat tombol "Butuh Bantuan" diklik
+    helpButton.addEventListener('click', () => {
+        helpModal.style.display = 'block';
+    });
+
+    // Sembunyikan modal saat tombol close diklik
+    closeModal.addEventListener('click', () => {
+        helpModal.style.animation = 'slideOut 0.3s ease-out';
+        setTimeout(() => {
+            helpModal.style.display = 'none';
+            helpModal.style.animation = ''; // Reset animasi
+        }, 300);
+    });
+
+    // Sembunyikan modal saat mengklik di luar modal
+    window.addEventListener('click', (event) => {
+        if (event.target === helpModal) {
+            helpModal.style.animation = 'slideOut 0.3s ease-out';
+            setTimeout(() => {
+                helpModal.style.display = 'none';
+                helpModal.style.animation = ''; // Reset animasi
+            }, 300);
+        }
+    });
+});
