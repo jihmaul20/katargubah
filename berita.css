@@ -347,6 +347,7 @@ header .menu-button {
     background-color: white;
     border-radius: 100%;
     margin-top: 20px;
+    margin-bottom: 40px;
     cursor: pointer;
     transition: transform 0.3s ease, background 0.3s ease;
     animation: updown 3s linear infinite;
@@ -364,3 +365,147 @@ header .menu-button {
     }
 }
   
+/* Butuh Bantuan */
+.help-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #ffcc00, #ff6f00);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+.help-button i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.help-button:hover {
+    background: linear-gradient(135deg, #ff6f00, #ffcc00);
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.help-modal {
+    display: none;
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    padding: 20px;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.help-modal-content {
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+    color: #ff6f00;
+}
+
+.help-modal h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+    display: flex;
+    align-items: center;
+}
+
+.help-modal h2 i {
+    margin-right: 10px;
+    color: red;
+}
+
+.help-modal p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.help-modal ul {
+    list-style: none;
+    padding: 0;
+}
+
+.help-modal ul li {
+    margin-bottom: 15px;
+}
+
+.help-modal ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.help-modal ul li a i {
+    margin-right: 10px;
+    font-size: 18px;
+    color: #ff6f00;
+}
+
+.help-modal ul li a:hover {
+    color: #ff6f00;
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+}
